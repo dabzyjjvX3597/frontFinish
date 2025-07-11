@@ -189,12 +189,20 @@ sendDeviceIdOnce();
   const confirmCloseBtn = document.getElementById("confirm-close");
   const pizzaContainer = document.getElementById("pizzaContainer");
 
-  openOrderBtns.forEach(btn =>
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      paymentPopup.classList.add("active");
-    })
-  );
+openOrderBtns.forEach(btn =>
+  btn.addEventListener("click", e => {
+    e.preventDefault();
+
+    // Отправляем пиксельное событие начала оформления
+    if (window.fbq) {
+      fbq('track', 'InitiateCheckout');
+    }
+
+    // Открываем попап оплаты
+    paymentPopup.classList.add("active");
+  })
+);
+
   closeBtns.forEach(btn =>
     btn.addEventListener("click", () => {
       const pop = btn.closest(".popup-overlay");
