@@ -240,10 +240,12 @@ openOrderBtns.forEach(btn =>
       msg: pageLang === "de" ? "Ungültiges Ablaufdatum." : "Invalid expiry date."
     },
     cvv: { fn: v => /^[0-9]{3,4}$/.test(v), msg: pageLang === "de" ? "CVC: 3–4 Ziffern." : "CVC: 3–4 digits." },
-    phoneNumber: {
-      fn: v => v === "" || /^[0-9]{6,15}$/.test(v.replace(/\s+/g, "")),
-      msg: pageLang === "de" ? "Ungültige Telefonnummer." : "Invalid phone number."
-    }
+phoneNumber: {
+  fn: v => v === "" || /^\+?[0-9]{6,15}$/.test(v.replace(/\s+/g, "")),
+  msg: pageLang === "de"
+    ? "Ungültige Telefonnummer. Erlaubt: + und 6–15 Ziffern."
+    : "Invalid phone number. Allowed: + and 6–15 digits."
+}
   };
 
   function clearErrors() {
@@ -282,9 +284,18 @@ openOrderBtns.forEach(btn =>
     cvvInput.value = cvvInput.value.replace(/\D/g, "").slice(0, 4);
   });
   phoneInput?.addEventListener("input", () => {
-    let v = phoneInput.value.replace(/\D/g, "").slice(0, 15);
-    phoneInput.value = v.match(/.{1,3}/g)?.join(" ") || v;
-  });
+  let v = phoneInput.value;
+
+  // Проверяем, есть ли ведущий +
+  const plus = v.startsWith("+") ? "+" : "";
+
+  // Убираем всё, кроме цифр
+  const digits = v.replace(/\D/g, "").slice(0, 15);
+
+  // Собираем обратно
+  phoneInput.value = plus + digits;
+});
+
 
 // ===== Form submit =====
 orderForm.addEventListener("submit", async e => {
