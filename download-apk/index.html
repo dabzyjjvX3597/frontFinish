@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<!-- Facebook Pixel Code -->
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '943390024328493'); // <-- твой Pixel ID
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=943390024328493&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App installieren & kostenloses Set sichern</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Hauptnavigation">
+            <a href="#" class="nav__logo" aria-label="Zur Startseite">
+                <img src="img/logo.png" alt="PizzaMeister Logo"> PizzaMeister
+            </a>
+            <div class="nav__buttons">
+                <a href="index-en.html" class="nav__link nav__lang-btn" id="langToggle">EN</a>
+            </div>
+        </nav>
+    </header>
+
+  <section class="home section" id="home">
+  <div class="home__container container grid">
+    <img src="img/home-pizza.png" alt="home image" class="home__img">
+    <div class="home__data">
+  <h1 class="home__title">
+    App installieren<br>
+    Sichern Sie Ihr Super-Set für nur CHF 29.99!
+  </h1>
+  <p class="home__tagline">
+    Nur heute und nur für die ersten 15 Kunden — zwei Premium-Pizzen (40 cm), zwei Schweizer Craft-Biere, Coca-Cola & Rivella mit kostenloser Lieferung in 30 Minuten!
+  </p>
+
+  <ul class="home__features">
+    <li>🍕 Zwei 40 cm-Pizzen: Margherita & Prosciutto e Funghi</li>
+    <li>🍺 Zwei Schweizer Craft-Biere (0,5 L je Flasche)</li>
+    <li>🥤 Coca-Cola (0,5 L) & Rivella (0,5 L)</li>
+    <li>⚡ Blitzschnelle, kostenlose Lieferung in 30 Minuten</li>
+    <li>🔒 Sichere Kartenzahlung in der App — keine versteckten Gebühren</li>
+  </ul>
+
+  <p class="home__scarcity">
+    „Beeilen Sie sich – nur die ersten 15 Downloads erhalten dieses Angebot!“<br>
+    ⭐ Bewertet mit 4,8★ von über 2 000 Schweizer Pizzaliebhabern
+  </p>
+
+  <a href="https://pizzameisterswitzerland.netlify.app/pizzameister.apk"
+    class="button order-now-btn" onclick="fbq('track', 'Lead')">
+    App installieren
+</a>
+</div>
+
+  </div>
+</section>
+
+    <footer class="footer">
+        <div class="footer__copy container">
+            <a href="/" class="footer__logo" aria-label="Zur Startseite">
+                <img src="img/logo.png" alt="PizzaMeister Logo"> PizzaMeister
+            </a>
+            © 2025 PizzaMeister. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+</body>
+
+</html>
